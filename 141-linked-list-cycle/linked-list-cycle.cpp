@@ -12,17 +12,18 @@ public:
         if (head == NULL || head->next == NULL) {
             return false;
         }
-        ListNode* ptr = head;
+        ListNode* ptr = head->next;
         ListNode* ptr1 = head;
 
-        while (ptr != NULL && ptr->next != NULL) {
+        while (ptr != ptr1) {
+            if(ptr->next ==NULL ||ptr->next->next==NULL){
+                return false;
+            }
 
             ptr = ptr->next->next;
             ptr1 = ptr1->next;
-            if (ptr == ptr1) {
-                return true;
-            }
+            
         }
-        return false;
+        return true;
     }
 };
