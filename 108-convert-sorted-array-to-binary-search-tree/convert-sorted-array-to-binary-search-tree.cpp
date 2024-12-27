@@ -21,8 +21,8 @@ private:
         }
         int m = start + (end-start)/2;
         TreeNode* root = new TreeNode(nums[m]);
-        root-> left = recursive(nums,start,m-1);
         root-> right = recursive(nums,m+1,end);
+        root-> left = recursive(nums,start,m-1);
         return root;
 
     }
