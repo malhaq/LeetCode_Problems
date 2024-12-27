@@ -18,7 +18,7 @@ public:
 private:
     TreeNode* recursive(vector<int>& nums, int start,int end){
         if(start>end){
-            return NULL;
+            return nullptr;
         }
         int m = start + (end-start)/2;
         TreeNode* root = new TreeNode(nums[m]);
