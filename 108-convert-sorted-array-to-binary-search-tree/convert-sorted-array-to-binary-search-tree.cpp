@@ -12,8 +12,7 @@
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        int len = nums.size();
-        return recursive(nums,0,len-1);
+        return recursive(nums,0,nums.size()-1);
     }
 private:
     TreeNode* recursive(vector<int>& nums, int start,int end){
