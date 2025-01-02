@@ -4,8 +4,8 @@ public:
         int len = chars.length();
         int count =0;
         vector<int> alphabet(26,0);
-        for(int i =0; i<len;i++){
-            alphabet[chars[i] - 'a']++;
+        for(char c:chars){
+            alphabet[c - 'a']++;
         }
         for(string word:words){
             if(goodWord(word,alphabet)){
@@ -17,9 +17,8 @@ public:
     bool goodWord(string word,vector<int>alphabet){
         vector<int>alphabetCount(26,0);
         for(char letter:word){
-            int charindex = letter-'a';
-            alphabetCount[charindex]++;
-            if(alphabet[charindex]<alphabetCount[charindex]){
+            alphabetCount[letter-'a']++;
+            if(alphabet[letter-'a']<alphabetCount[letter-'a']){
                 return false;
             }
         }
