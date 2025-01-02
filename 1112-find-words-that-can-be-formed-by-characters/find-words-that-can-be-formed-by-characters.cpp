@@ -1,7 +1,6 @@
 class Solution {
 public:
     int countCharacters(vector<string>& words, string chars) {
-        int len = chars.length();
         int count =0;
         vector<int> alphabet(26,0);
         for(char c:chars){
