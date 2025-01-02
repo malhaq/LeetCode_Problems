@@ -15,7 +15,7 @@ public:
     }
     bool goodWord(const string& word,vector<int>&alphabet){
         vector<int>alphabetCount(26,0);
-        for( char letter:word){
+        for(const char& letter:word){
             alphabetCount[letter-'a']++;
             if(alphabet[letter-'a']<alphabetCount[letter-'a']){
                 return false;
