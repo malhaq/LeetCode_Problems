@@ -3,11 +3,11 @@ public:
     string longestPalindrome(string s) {
         int start =0;
         int end =0;
-        int len;
+        // int len;
         for (int i =0;i<s.length();i++){
             int first = centerOfString(s,i,i);
             int second = centerOfString(s,i,i+1);
-            len= max(first,second);
+            int len= max(first,second);
             if(len>end-start){
                 start = i-(len-1)/2;
                 end = i+len/2;
