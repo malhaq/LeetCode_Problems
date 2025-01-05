@@ -11,11 +11,11 @@ public:
             output.push_back(sofar);
             return;
         }
-        if (open < n) {
-            fillVector(output, sofar + "(", n, open + 1, close);
-        }
         if (close < open) {
             fillVector(output, sofar + ")", n, open, close + 1);
+        }
+        if (open < n) {
+            fillVector(output, sofar + "(", n, open + 1, close);
         }
     }
 };
