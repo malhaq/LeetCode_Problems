@@ -1,54 +1,26 @@
 class Solution {
 public:
-    bool isPalindrome(string s) {
-        int i = 0;
-        int j = s.length()-1;
-        while(i<j){
-            if(!isalpha(s[i])&&!isdigit(s[i]) || s[i]== ' '){
-                i++;
-                continue;
-            }
-            
-            if(!isalpha(s[j]) && !isdigit(s[j]) || s[j]== ' '){
-                j--;
-                continue;
-            }
+bool isPalindrome(string s) {
+string result = "";
+for (int i = 0; i < s.length(); i++) {
+if (isalnum(s[i])) {
+result += tolower(s[i]);
+}
+}
 
-            if(tolower(s[i]) != tolower(s[j])){
-                cout<<tolower(s[i]);
-                cout<<"\n";
-                cout<<tolower(s[j]);
+int rightPtr = result.length() -1;
+int leftPtr = 0;
 
-                return false;
-            } 
-            i++;
-            j--;
+while(rightPtr > leftPtr){
+if((result[leftPtr] != result[rightPtr]) )
+return false;
+
+leftPtr++;
+rightPtr--;
+}
 
 
-        }
-        return true;
 
-        // string result;
-        // stack<char> characters;
-        // for(char c:s){
-        //     if((isalpha(c)||isdigit(c))&&c!=' '){
-        //         char lower = tolower(c);
-        //         result=result+lower;
-                
-
-        //     }
-        // }
-        // int i = 0;
-        // int j = result.length()-1;
-        // if (j <1) return true;
-        // while(i<=j){
-            
-        //     if( result[i] != result[j]) return false;
-        //     i++;
-        //     j--;
-        // }
-        
-        // return true;
-        
-    }
+return true;
+}
 };
