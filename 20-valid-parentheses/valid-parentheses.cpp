@@ -1,44 +1,38 @@
 class Solution {
 public:
-    stack <char> brackets;
     bool isValid(string s) {
-        int n = s.length();
-        char current ;
-        for(int i=0;i<n;i++){
-            current = s[i];
-            if(current == '('||current =='{'||current =='['){
-                brackets.push(current);
-            }
-            else{
-                if(brackets.empty()){
-                    return false;
-                }
-                switch (current){
-                    case ')':
-                    if(brackets.top() != '('){
-                        return false;
-                    } else {
-                        brackets.pop();
-                    }
-                    break;
-                    case '}':
-                    if(brackets.top() != '{'){
-                        return false;
-                    } else {
-                        brackets.pop();
-                    }
-                    break;
+        stack<char> subhi;
+        for(char c : s){
+            if(c == '[' || c == '(' || c == '{'){
+                subhi.push(c);
+                continue;
+            }else {
+                if(subhi.empty()) return false;
+                switch (c){
                     case ']':
-                    if(brackets.top() != '['){
-                        return false;
-                    } else {
-                        brackets.pop();
-                    }
-                    break;
+                        if(subhi.top() != '[') {
+                            return false;
+                        }else{
+                            subhi.pop();
+                        }
+                        break;
+                    case '}':
+                        if(subhi.top() != '{') {
+                            return false;
+                        }else{
+                            subhi.pop();
+                        }
+                        break;
+                    case ')':
+                        if(subhi.top() != '(') {
+                            return false;
+                        }else{
+                            subhi.pop();
+                        }
+                        break;
                 }
             }
         }
-        return brackets.empty();
-        
+        return subhi.empty();
     }
 };
