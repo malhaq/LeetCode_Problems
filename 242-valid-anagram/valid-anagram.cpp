@@ -12,9 +12,6 @@ public:
             if(i!=0){return false;}
         }
         return true;
-        sort(s.begin(),s.end());
-        sort(t.begin(),t.end());
-        if(s.length()!=t.length()){return false;}
-        return s==t;
+        
     }
 };
