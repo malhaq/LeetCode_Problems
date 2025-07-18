@@ -17,7 +17,7 @@ public:
             if(!pointer1){
                 pointer1= headB;
             }else{
-                pointer1 = pointer1 -> next;
+                pointer1 =pointer1 -> next;
             }
             if(!pointer2){
                 pointer2 = headA;
