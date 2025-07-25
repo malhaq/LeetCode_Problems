@@ -8,7 +8,7 @@
  */
 class Solution {
 public:
-    ListNode *getIntersectionNode( ListNode *headA, ListNode *headB) {
+    ListNode *getIntersectionNode( ListNode *headA, ListNode *headB ) {
         if(!headA || !headB) return nullptr;
         ListNode* pointer1 = headA;
         ListNode* pointer2 = headB;
