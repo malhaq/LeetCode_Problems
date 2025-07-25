@@ -14,7 +14,7 @@ public:
         ListNode* pointer2 = headB;
 
         while(pointer1 != pointer2){
-            if(!pointer1){
+            if(!pointer1 ){
                 pointer1= headB;
             }else{
                 pointer1 =pointer1 -> next;
