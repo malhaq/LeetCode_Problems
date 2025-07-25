@@ -27,7 +27,7 @@ public:
                 pointer2 = pointer2 -> next;
             }
         }
-        return pointer1;
+        return pointer1 ;
         
     }
 };
